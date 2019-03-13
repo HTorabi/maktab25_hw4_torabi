@@ -5,14 +5,26 @@ import java.util.Scanner;
 public class TestBloodData {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String bloodType;
+        char factor;
         System.out.println("Enter Blood Type");
-        String bloodType = scanner.nextLine();
+        while (true) {
+            bloodType = scanner.nextLine();
+            if ((bloodType.equalsIgnoreCase("AB") || bloodType.equalsIgnoreCase("A") || bloodType.equalsIgnoreCase("B") || bloodType.equalsIgnoreCase("O")))
+                break;
+            else
+                System.out.println("This blood Type is not valid" + "\n" + "Enter another one");
+        }
         System.out.println("Enter factor:+ or -");
-        char factor = scanner.nextLine().charAt(0);
+        while (true) {
+            factor = scanner.nextLine().charAt(0);
+            if (factor == '+' || factor == '-')
+                break;
+            else
+                System.out.println("This blood factor is not valid" + "\n" + "Enter another one");
+        }
         BloodData bloodData = new BloodData(bloodType, factor);
-        if (bloodData.getBloodType() != null && (bloodData.getFactor() == '+' || bloodData.getFactor() == '-'))
-
-            System.out.println(bloodData.getBloodType() + bloodData.getFactor());
+        System.out.println(bloodData.getBloodType() + bloodData.getFactor());
 
     }
 }
