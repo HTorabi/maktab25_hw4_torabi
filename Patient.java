@@ -3,22 +3,14 @@ package com.maktab25.hw4.torabi.practice4;
 public class Patient {
     private int id;
     private int age;
-    public int getAge() {
-        return age;
-    }
-
-    public int getId() {
-        return id;
-    }
     private BloodData bloodData = new BloodData();
-    public BloodData getBloodData() {
-        return bloodData;
-    }
+    static int MAX_AGE;
+
 
     Patient() {
         id = 0;
         age = 0;
-        bloodData.setBloodType("o");
+        bloodData.setBloodType("O");
         bloodData.setFactor('+');
     }
 
@@ -29,5 +21,15 @@ public class Patient {
         bloodData.setFactor(bloodData1.getFactor());
     }
 
+    public BloodData getBloodData() {
+        return bloodData;
+    }
 
+    public int getAge() {
+        return age;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
