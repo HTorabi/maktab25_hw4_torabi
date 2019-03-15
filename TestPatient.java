@@ -37,11 +37,10 @@ public class TestPatient {
                 System.out.println("This blood factor is not valid" + "\n" + "Enter another one");
         }
         Patient patient = new Patient(id, age, new BloodData(bloodType, factor));
-        if (patient.getBloodData().getBloodType() != null && (patient.getBloodData().getFactor() == '+' || patient.getBloodData().getFactor() == '-')) {
             System.out.println("ID:" + patient.getId());
             System.out.println("Age:" + patient.getAge());
             System.out.println(patient.getBloodData().getBloodType() + patient.getBloodData().getFactor());
-        }
+       
 
 
     }
